@@ -121,9 +121,7 @@ You can serve the built frontend using a static file server or integrate it with
 
 1. **Backend (backend/.env)**:
 
-```env
-  Copy
-  Edit
+```
   PORT=3500
   DB_PORT=27017
   DB_NAME=myappdb
@@ -131,8 +129,8 @@ You can serve the built frontend using a static file server or integrate it with
   DB_USER=ankit
   DB_PASS=ankit
   Frontend (frontend/.env):
+```
 
-```env
-  Copy
-  Edit
+```
   REACT_APP_API_URL=http://<backend-ip>:3500
+```
