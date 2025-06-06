@@ -51,15 +51,16 @@ This guide walks you through setting up and running a full-stack application wit
 1. **Navigate to the backend directory**:
 
    ```bash
-   cd backend
+      cd backend
 
 Install dependencies:
+
 ```
   npm install
-
-Start the backend server:
 ```
-node index.js
+Start the backend server:
+
+```node index.js```
 
 ## 🚀 Frontend Setup
 1. **Navigate to the frontend directory**:
