@@ -60,7 +60,9 @@ Install dependencies:
 ```
 Start the backend server:
 
-```node index.js```
+```bash
+   node index.js
+
 
 ## 🚀 Frontend Setup
 1. **Navigate to the frontend directory**:
