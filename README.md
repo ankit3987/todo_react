@@ -33,8 +33,8 @@ This guide walks you through setting up and running a full-stack application wit
 ---
 
 ## 🛠️ Project Structure
-
-project-root
+```
+/project-root
 ├── /backend
 │ ├── index.js
 │ ├── .env
