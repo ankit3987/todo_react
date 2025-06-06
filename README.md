@@ -50,13 +50,17 @@ This guide walks you through setting up and running a full-stack application wit
 
 1. **Navigate to the backend directory**:
 
-   ```bash
+   ```
       cd backend
+   ```
 
 Install dependencies:
 
-   ```bash
+   ```
+      bash
       npm install
+
+   ```
 
 Start the backend server:
 
