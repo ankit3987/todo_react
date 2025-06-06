@@ -33,7 +33,8 @@ This guide walks you through setting up and running a full-stack application wit
 ---
 
 ## 🛠️ Project Structure
-```
+
+---
 /project-root
 ├── /backend
 │ ├── index.js
@@ -43,9 +44,6 @@ This guide walks you through setting up and running a full-stack application wit
 ├── /src
 ├── .env
 └── package.json
-
-
-
 ---
 
 ## 🚀 Backend Setup
