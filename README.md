@@ -5,7 +5,7 @@ This guide walks you through setting up and running a full-stack application wit
 - **Frontend**: React (created using Create React App)
 - **Backend**: Node.js with Express
 - **Database**: MongoDB
-
+**note : node version 16**
 ---
 
 ## 🛠️ Project Structure
