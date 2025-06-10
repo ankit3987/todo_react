@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ankit
+      MONGO_INITDB_ROOT_PASSWORD: ankit
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "3500:3500"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URL: mongodb://ankit:ankit@mongo:27017/myappdb?authSource=admin
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
