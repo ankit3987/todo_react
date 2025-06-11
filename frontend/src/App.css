@@ -10,6 +10,7 @@
     padding: 10px 20px;
     text-align: center;
     font-size: 1.5rem;
+    border-radius: 15px;
 }
 
 .main-content {
@@ -17,7 +18,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    border-radius: 15px;
+
 }
 
 .todo-container {
