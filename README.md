@@ -1,5 +1,10 @@
 # Full-Stack Application Setup
 
+port have to oopen in instance 
+27017 for db
+3000 for frontend
+3500 for backend
+
 This guide walks you through setting up and running a full-stack application with:
 
 - **Frontend**: React (created using Create React App)
