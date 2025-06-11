@@ -8,8 +8,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ankit
       MONGO_INITDB_ROOT_PASSWORD: ankit
     volumes:
-      - mongo-data:/data/db
-
+#      - mongo-data:/data/db this for default directory /var/lib
+       - /home/ubuntu/mongo-data:/data/db
   backend:
     build: ./backend
     container_name: backend
