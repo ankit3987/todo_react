@@ -9,14 +9,14 @@ phases:
     commands:
       - docker build -t my-frontend ./frontend
       - docker build -t my-backend ./backend
-      - docker tag my-frontend:latest mydockerhubuser/my-frontend:latest
-      - docker tag my-backend:latest mydockerhubuser/my-backend:latest
+      - docker tag my-frontend:latest ankitrawat3987/my-frontend:latest
+      - docker tag my-backend:latest ankitrawat3987/my-backend:latest
   post_build:
     commands:
-      - docker push mydockerhubuser/my-frontend:latest
-      - docker push mydockerhubuser/my-backend:latest
+      - docker push ankitrawat3987/my-frontend:latest
+      - docker push ankitrawat3987/my-backend:latest
       - printf '[{"name":"frontend","imageUri":"%s"},{"name":"backend","imageUri":"%s"}]' \
-         mydockerhubuser/my-frontend:latest mydockerhubuser/my-backend:latest > imagedefinitions.json
+         ankitrawat3987/my-frontend:latest ankitrawat3987/my-backend:latest > imagedefinitions.json
 
 artifacts:
   files:
