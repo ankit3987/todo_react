@@ -1,23 +1,39 @@
 version: 0.2
 
+env:
+  secrets-manager:
+    DOCKERHUB_USERNAME: "/docker-cred/:username"
+    DOCKERHUB_PASSWORD: "/docker-cred/:password"
+
 phases:
+  install:
+    commands:
+      - echo Installing docker...
+      - yum install -y docker
+      - docker --version
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
-      - echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+      - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+
   build:
     commands:
-      - docker build -t my-frontend ./frontend
-      - docker build -t my-backend ./backend
-      - docker tag my-frontend:latest ankitrawat3987/my-frontend:latest
-      - docker tag my-backend:latest ankitrawat3987/my-backend:latest
+      - echo Building frontend Docker image...
+      - cd frontend
+      - docker build -t "$DOCKERHUB_USERNAME/frontend:$CODEBUILD_RESOLVED_SOURCE_VERSION" .
+      - cd ..
+      - echo Building backend Docker image...
+      - cd backend
+      - docker build -t "$DOCKERHUB_USERNAME/backend:$CODEBUILD_RESOLVED_SOURCE_VERSION" .
+      - cd ..
+
   post_build:
     commands:
-      - docker push ankitrawat3987/my-frontend:latest
-      - docker push ankitrawat3987/my-backend:latest
-      - printf '[{"name":"frontend","imageUri":"%s"},{"name":"backend","imageUri":"%s"}]' \
-         ankitrawat3987/my-frontend:latest ankitrawat3987/my-backend:latest > imagedefinitions.json
+      - echo Pushing frontend Docker image to Docker Hub...
+      - docker push "$DOCKERHUB_USERNAME/frontend:$CODEBUILD_RESOLVED_SOURCE_VERSION"
+      - echo Pushing backend Docker image to Docker Hub...
+      - docker push "$DOCKERHUB_USERNAME/backend:$CODEBUILD_RESOLVED_SOURCE_VERSION"
 
 artifacts:
   files:
-    - imagedefinitions.json
+    - '**/*'
