@@ -9,7 +9,7 @@ phases:
   install:
     commands:
       - echo Installing docker...
-      - yum install -y docker
+      - apt install -y docker
       - docker --version
   pre_build:
     commands:
