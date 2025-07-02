@@ -1,6 +1,10 @@
 version: 0.0
 os: linux
 
+files:
+  - source: /
+    destination: /home/ubuntu/
+
 hooks:
   ApplicationStop:
     - location: stop_container.sh
