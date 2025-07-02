@@ -7,12 +7,12 @@ hooks:
       timeout: 300
       runas: root
 
-  BeforeInstall:                 # ← newly added
-    - location: cleanup.sh
-      timeout: 300
-      runas: root
+ # BeforeInstall:                 # ← newly added
+  #  - location: cleanup.sh
+   #   timeout: 300
+    #  runas: root
 
-  AfterInstall:
-    - location: start_container.sh
-      timeout: 300
-      runas: root
+  #AfterInstall:
+   # - location: start_container.sh
+   #   timeout: 300
+   #   runas: root
