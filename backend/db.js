@@ -20,9 +20,9 @@
 //module.exports = connectDB;
 
 
-
+require('dotenv').config();
 const mongoose = require("mongoose");
-require("dotenv").config();
+//require("dotenv").config();
 
 const connectDB = async () => {
     try {
