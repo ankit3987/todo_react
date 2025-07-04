@@ -16,10 +16,10 @@
 version: 0.0
 os: linux
 
-# files:
-#   - source: /
-#     destination: /home/ubuntu/three-tier-app-code/frontend
-#     overwrite: true
+files:
+  - source: /
+    destination: /home/ubuntu/three-tier-app-code/frontend
+    overwrite: true
 
 hooks:
   AfterInstall:
