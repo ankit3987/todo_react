@@ -2,17 +2,12 @@ version: 0.0
 os: linux
 
 hooks:
-  ApplicationStop:
-    - location: stop_container.sh
+  ApplicationInstall:
+    - location: scripts/install_pm2.sh
       timeout: 300
       runas: root
 
- # BeforeInstall:                 # ← newly added
-  #  - location: cleanup.sh
-   #   timeout: 300
-    #  runas: root
-
-  #AfterInstall:
-   # - location: start_container.sh
-   #   timeout: 300
-   #   runas: root
+  ApplicationStart:
+    - location: scripts/start_pm2.sh
+      timeout: 300
+      runas: root
