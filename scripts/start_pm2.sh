@@ -6,7 +6,7 @@
 #!/bin/bash
 set -e
 
-APP_DIR="/home/ubuntu/todo-react/frontend"
+APP_DIR="/home/ubuntu/three-tier-app/code"
 cd "$APP_DIR" || { echo "Directory not found: $APP_DIR"; exit 1; }
 
 # Optionally reinstall deps:
