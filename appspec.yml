@@ -18,8 +18,8 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ubuntu/three-tier-app-code/frontend
-    overwrite: true
+    destination: /home/ubuntu
+    # overwrite: true
 
 hooks:
   AfterInstall:
