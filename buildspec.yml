@@ -9,8 +9,8 @@ phases:
   install:
     commands:
       - echo Installing npm...
-      - sudo apt update
-      - sudo apt install npm -y
+      - yum update
+      - yum install npm -y
       - npm -version
   
   build:
