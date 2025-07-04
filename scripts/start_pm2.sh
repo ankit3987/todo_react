@@ -6,7 +6,9 @@
 #!/bin/bash
 set -e
 
-APP_DIR="/home/ubuntu/three-tier-app-code/frontend"
+# APP_DIR="/home/ubuntu/three-tier-app-code/frontend"
+APP_DIR="/home/ubuntu"
+
 cd "$APP_DIR" || { echo "Directory not found: $APP_DIR"; exit 1; }
 
 # Optionally reinstall deps:
