@@ -1,3 +1,17 @@
+# #!/bin/bash
+# cd /todo-react/frontend
+# pm2 --name todo-app-fe start npm -- start
+
+
 #!/bin/bash
-cd /todo-react/frontend
-pm2 --name todo-app-fe start npm -- start
+set -e
+
+APP_DIR="/home/ubuntu/todo-react/frontend"
+cd "$APP_DIR" || { echo "Directory not found: $APP_DIR"; exit 1; }
+
+# Optionally reinstall deps:
+# npm install
+
+# Launch the app
+pm2 start npm --name todo-app-fe -- start
+pm2 save
