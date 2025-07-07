@@ -17,6 +17,7 @@ phases:
     commands:
       - echo Building frontend...
       - cd frontend
+      - rm -rf node_modules package-lock.json
       - npm i
       # - npm start
       # - cd ..
