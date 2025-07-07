@@ -2,22 +2,22 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
-      - echo Installing npm...
-      - sudo apt update
-      - sudo apt install npm -y
-      - npm -version
+      - echo "Node and npm are preinstalled:"
+      - node -v
+      - npm -v
 
   build:
     commands:
-      - echo Building frontend...
+      - echo "Building frontend..."
       - cd frontend
-      - npm i
+      - npm install
 
 artifacts:
   files:
     - '**/*'
-
 
 # version: 0.2
 # phases:
