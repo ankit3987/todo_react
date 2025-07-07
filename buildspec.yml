@@ -11,7 +11,8 @@ phases:
       - echo Installing npm...
       # - apt update
       # - apt install npm -y
-      - yum update
+      # - yum update
+      - dnf update
       - yum install npm -y
       - npm -version
   
